@@ -3,6 +3,6 @@
 
   npm install -g protractor<br>
   webdriver-manager update<br>
-  webdriver manager start<br>
+  webdriver-manager start<br>
   <br>
   protractor conf.js<br>
