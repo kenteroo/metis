@@ -1,8 +1,8 @@
 # metis
-A quick automated test for Parkside
+## A quick automated test for Parkside
 
-npm install -g protractor
-webdriver-manager update
-webdriver manager start
-
-protractor conf.js should run the tests
+  npm install -g protractor<br>
+  webdriver-manager update<br>
+  webdriver manager start<br>
+  <br>
+  protractor conf.js<br>
