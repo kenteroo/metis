@@ -15,26 +15,26 @@ describe('Some basic web tests for Parkside', function() {
 
     var popuptext = element(by.xpath("//a[@class='mwe-popups-extract']/p"))
 
-    var Pontushref      = element(by.xpath("//td/a[@title='Pontus (mythology)']"));
-    var Gaiahref        = element(by.xpath("//td/a[@title='Gaia']"));
-    var Eurybiashref    = element(by.xpath("//td/a[@title='Eurybia (mythology)']"));
-    var Persesshref     = element(by.xpath("//td/a[@title='Perses (Titan)']"));
-    var Phainonhref     = element(by.xpath("//td/a[@title='Phainon']"));
-    var Stilbonhref     = element(by.xpath("//td/a[@title='Stilbon (mythology)']"));
+    var Pontushref      = element(by.xpath("//td/a[@title='Pontus (mythology)']"))
+    var Gaiahref        = element(by.xpath("//td/a[@title='Gaia']"))
+    var Eurybiashref    = element(by.xpath("//td/a[@title='Eurybia (mythology)']"))
+    var Persesshref     = element(by.xpath("//td/a[@title='Perses (Titan)']"))
+    var Phainonhref     = element(by.xpath("//td/a[@title='Phainon']"))
+    var Stilbonhref     = element(by.xpath("//td/a[@title='Stilbon (mythology)']"))
 
-    expect(ch1.getText()).toEqual(th1.getText());
-    expect(ch2.getText()).toEqual(th2.getText());
-    expect(ch3.getText()).toEqual(th3.getText());
-    expect(ch4.getText()).toEqual(th4.getText());
+    expect(ch1.getText()).toEqual(th1.getText())
+    expect(ch2.getText()).toEqual(th2.getText())
+    expect(ch3.getText()).toEqual(th3.getText())
+    expect(ch4.getText()).toEqual(th4.getText())
 
     ch1.click() //click the href
-    expect(browser.getCurrentUrl()).toEqual("https://en.wikipedia.org/wiki/Metis_(mythology)#Family"); //verify that the browser URL has changed
+    expect(browser.getCurrentUrl()).toEqual("https://en.wikipedia.org/wiki/Metis_(mythology)#Family") //verify that the browser URL has changed
     ch2.click()
-    expect(browser.getCurrentUrl()).toEqual("https://en.wikipedia.org/wiki/Metis_(mythology)#Mythology");
+    expect(browser.getCurrentUrl()).toEqual("https://en.wikipedia.org/wiki/Metis_(mythology)#Mythology")
     ch3.click()
-    expect(browser.getCurrentUrl()).toEqual("https://en.wikipedia.org/wiki/Metis_(mythology)#References");
+    expect(browser.getCurrentUrl()).toEqual("https://en.wikipedia.org/wiki/Metis_(mythology)#References")
     ch4.click()
-    expect(browser.getCurrentUrl()).toEqual("https://en.wikipedia.org/wiki/Metis_(mythology)#Further_reading");
+    expect(browser.getCurrentUrl()).toEqual("https://en.wikipedia.org/wiki/Metis_(mythology)#Further_reading")
 
 
     browser.actions().mouseMove(element(by.xpath("(//a[@href='/wiki/Nike_(mythology)'])")).getWebElement()).perform() //move the mouse over the "Nike" href
@@ -45,11 +45,11 @@ describe('Some basic web tests for Parkside', function() {
 
     element(by.xpath("(//a[@href='/wiki/Nike_(mythology)'])")).click()
     element(by.xpath("(//a[@href='#Family_tree'])")).click()
-    expect(Pontushref.isDisplayed()).toBe(true);
-    expect(Gaiahref.isDisplayed()).toBe(true);
-    expect(Eurybiashref.isDisplayed()).toBe(true);
-    expect(Persesshref.isDisplayed()).toBe(true);
-    expect(Phainonhref.isDisplayed()).toBe(true);
-    expect(Stilbonhref.isDisplayed()).toBe(true);
+    expect(Pontushref.isDisplayed()).toBe(true)
+    expect(Gaiahref.isDisplayed()).toBe(true)
+    expect(Eurybiashref.isDisplayed()).toBe(true)
+    expect(Persesshref.isDisplayed()).toBe(true)
+    expect(Phainonhref.isDisplayed()).toBe(true)
+    expect(Stilbonhref.isDisplayed()).toBe(true)
   });
 });
