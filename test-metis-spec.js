@@ -13,14 +13,14 @@ describe('Some basic web tests for Parkside', function() {
     var th3 = element(by.xpath("//span[@id='References']"));
     var th4 = element(by.xpath("//span[@id='Further_reading']"));
 
-    
-
     var Pontushref      = element(by.xpath("//td/a[@title='Pontus (mythology)']"));
     var Gaiahref        = element(by.xpath("//td/a[@title='Gaia']"));
     var Eurybiashref    = element(by.xpath("//td/a[@title='Eurybia (mythology)']"));
     var Persesshref     = element(by.xpath("//td/a[@title='Perses (Titan)']"));
     var Phainonhref     = element(by.xpath("//td/a[@title='Phainon']"));
     var Stilbonhref     = element(by.xpath("//td/a[@title='Stilbon (mythology)']"));
+
+    var pc_nike_mythology_href = element(by.xpath("(//div[@class='div-col columns column-width']/ul/li/a[@href='/wiki/Nike_(mythology)'])"));
 
     expect(ch1.getText()).toEqual(th1.getText());
     expect(ch2.getText()).toEqual(th2.getText());
@@ -36,13 +36,13 @@ describe('Some basic web tests for Parkside', function() {
     ch4.click();
     expect(browser.getCurrentUrl()).toEqual("https://en.wikipedia.org/wiki/Metis_(mythology)#Further_reading");
 
-    browser.actions().mouseMove(element(by.xpath("(//a[@href='/wiki/Nike_(mythology)'])")).getWebElement()).perform(); //move the mouse over the "Nike" href
+    browser.actions().mouseMove(pc_nike_mythology_href.getWebElement()).perform(); //move the mouse over the "Nike" href
     browser.sleep(1000);
     expect(element(by.xpath("//a[@class='mwe-popups-extract']/p")).isPresent());
     var popuptext = element(by.xpath("//a[@class='mwe-popups-extract']/p"));
     expect(popuptext.getText()).toEqual('In ancient Greek religion, Nike was a goddess who personified victory. Her Roman equivalent was Victoria.');
 
-    element(by.xpath("(//a[@href='/wiki/Nike_(mythology)'])")).click();
+    pc_nike_mythology_href.click();
     element(by.xpath("(//a[@href='#Family_tree'])")).click();
     expect(Pontushref.isDisplayed()).toBe(true);
     expect(Gaiahref.isDisplayed()).toBe(true);
